@@ -60,7 +60,7 @@ git clone https://github.com/s7don0/WAG && cd WAG && chmod +x install.sh && ./in
 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
 
-✨┇ومبروك نصبت سورس تشاكي، 
+✨┇ومبروك نصبت سورس WAG 
 
 ☑️┇تيجي الجديد ع التوكن 
 
