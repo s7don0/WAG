@@ -616,7 +616,7 @@ local function send(chat_id, reply_to_message_id, disable_notification, text, di
   }
   local keko = "https://api.telegram.org/bot" ..token.. '/sendMessage?chat_id=' .. chat_id
   if reply_to_message_id ~= 0 then
-  keko = keko .. '&reply_to_message_id=' .. reply_to_message_id/2097152/0.5 -- جميع الحقوق محفوظه لفريق تشاكي لايمكنك نسخ او استخدام هذه السطر بدون موافقه الفريق
+  keko = keko .. '&reply_to_message_id=' .. reply_to_message_id/2097152/0.5 -- جميع الحقوق محفوظه لفريق WAG لايمكنك نسخ او استخدام هذه السطر بدون موافقه الفريق
   end
   if disable_web_page_preview then
   keko = keko .. '&disable_web_page_preview=true'
@@ -878,10 +878,10 @@ if f:match("^(.*)(keko_tshake)(.*)$") then
 database:sadd("files"..bot_id,name_t[2]..'.lua')
 send(msg.chat_id_, msg.id_, 1, "✔️┇تم تفعيل {"..name_t[2]..".lua}", 1, 'html')
 else
-send(msg.chat_id_, msg.id_, 1, '⚠️┇عذرا لا يمكن تشغيل {'..name_t[2]..'.lua} \n❗️┇لانه لا يدعم سورس تشاكي \n 🦁┇[ملفات يدعمها سورس تشاكي](t.me/tshakeFiles)', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '⚠️┇عذرا لا يمكن تشغيل {'..name_t[2]..'.lua} \n❗️┇لانه لا يدعم سورس WAG \n 🦁┇[ملفات يدعمها سورس WAG](t.me/llN00Xll)', 1, 'md')
 end
 else
-send(msg.chat_id_, msg.id_, 1, '⚠️┇عذرا لا يمكن تشغيل {'..name_t[2]..'.lua} \n❗️┇لانه لا يدعم سورس تشاكي \n 🦁┇[ملفات يدعمها سورس تشاكي](t.me/tshakeFiles)', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '⚠️┇عذرا لا يمكن تشغيل {'..name_t[2]..'.lua} \n❗️┇لانه لا يدعم سورس WAG \n 🦁┇[ملفات يدعمها سورس WAG](t.me/llN00Xll)', 1, 'md')
 end
 end
 local text = msg.content_.text_:gsub("تعطيل ملف",'del file')
@@ -1043,7 +1043,7 @@ if (data.result and data.result.can_promote_members or data.result.status == 'cr
     if database:get('bot:lang:'..msg.chat_id_) then
     send(msg.chat_id_, msg.id_, 1, '*Bot is already Added Group*', 1, 'md')
     else
-    send(msg.chat_id_, msg.id_, 1, "❕┇المجموعه مفعله سابقا", 1, 'md')
+    send(msg.chat_id_, msg.id_, 1, "❕┇المجموعه مفعله من زمان", 1, 'md')
     end
     end
     if not database:get("bot:charge:"..msg.chat_id_) then
@@ -1051,7 +1051,7 @@ if (data.result and data.result.can_promote_members or data.result.status == 'cr
     if database:get('bot:lang:'..msg.chat_id_) then
     send(msg.chat_id_, msg.id_, 1, "*> Your ID :* _"..msg.sender_user_id_.."_\n*> Bot Added To Group*", 1, 'md')
     else
-    send(msg.chat_id_, msg.id_, 1, "🎫┇ايديك ~⪼ ("..msg.sender_user_id_..")\n☑┇تم تفعيل المجموعه", 1, 'md')
+    send(msg.chat_id_, msg.id_, 1, "🎫┇ايديك ~⪼ ("..msg.sender_user_id_..")\n☑┇فعلت المجموعه دشوفو الحمايه الزينه مني اححح", 1, 'md')
     end
     if database:get('bot:lang:'..msg.chat_id_) then
     send(sudo_add, 0, 1, "*> Your ID :* _"..msg.sender_user_id_.."_\n*> added bot to new group*" , 1, 'md')
@@ -1070,14 +1070,14 @@ if (data.result and data.result.can_promote_members or data.result.status == 'cr
    if database:get('bot:lang:'..msg.chat_id_) then
   send(msg.chat_id_, msg.id_, 1, "> A few group can not be add", 1, 'md')
    else
-    send(msg.chat_id_, msg.id_, 1, "⚠️┇المجموعه قليله لا يمكن تفعيلها", 1, 'md')
+    send(msg.chat_id_, msg.id_, 1, "⚠️┇حمبي المجموعه قليله", 1, 'md')
     end
 end
     else
   if database:get('bot:lang:'..msg.chat_id_) then
   send(msg.chat_id_, msg.id_, 1, "> You are not a creator or a manager", 1, 'md')
   else
-  send(msg.chat_id_, msg.id_, 1, "⚠️┇انت لست (منشئ او مدير) في المجموعة", 1, 'md')
+  send(msg.chat_id_, msg.id_, 1, "⚠️┇ولك انت لامنشئ ولامدير ولازبال جاي تلعب بكيفك", 1, 'md')
   end
 end
    end
@@ -1094,7 +1094,7 @@ end
         if database:get('bot:lang:'..msg.chat_id_) then
         send(msg.chat_id_, msg.id_, 1, '*Bot is already remove Group*', 1, 'md')
         else
-        send(msg.chat_id_, msg.id_, 1, "❕┇المجموعه معطله سابقا", 1, 'md')
+        send(msg.chat_id_, msg.id_, 1, "❕┇لو تموتون مافعلها بعد", 1, 'md')
         end
         end
         if database:get("bot:charge:"..msg.chat_id_) then
@@ -1115,7 +1115,7 @@ end
   if database:get('bot:lang:'..msg.chat_id_) then
   send(msg.chat_id_, msg.id_, 1, "> You are not a creator or a manager", 1, 'md')
   else
-  send(msg.chat_id_, msg.id_, 1, "⚠️┇انت لست (منشئ او مدير) في المجموعة", 1, 'md')
+  send(msg.chat_id_, msg.id_, 1, "⚠️┇ولك انت لامنشئ ولامدير ولازبال جاي تلعب بكيفك", 1, 'md')
   end
   end
   end
@@ -1141,7 +1141,7 @@ if data.message_.content_.photo_.sizes_[3] then
 id_keko = data.message_.content_.photo_.sizes_[3].photo_.persistent_id_
 end
 tdcli.changeChatPhoto(msg.chat_id_, id_keko)
-send(msg.chat_id_, msg.id_, 1, '✔️┇تم وضع صوره للمجموعه️', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔️┇دشوف الخليتها اني شلونها تشكك', 1, 'md')
 database:del('bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_)
 end
 end
@@ -2511,16 +2511,16 @@ end
 
 if text == 'هلو' then
 if not database:get('bot:rep:mute'..msg.chat_id_) then
-moody = "• هَٰہۧـﮧﮧلْٰاَٰوٍّ໑اَٰتّٰ 🌝☄ֆ"
+moody = "• اوف لو تقبل/ي نكبل"
 else
 moody = ''
 end
 send(msg.chat_id_, msg.id_, 1, moody, 1, 'md')
 end
 
-if text == 'تشاكي' then
+if text == 'باتشي' then
 if not database:get('bot:rep:mute'..msg.chat_id_) then
-moody = "• نٍٰـعٍِّـﮧﮧمٍٰ تّٰفِٰـہضلْٰ 🍁🌛ֆ"
+moody = "• يروحه كول كليباتي"
 else
 moody = ''
 end
@@ -2576,7 +2576,7 @@ send(msg.chat_id_, msg.id_, 1, moody, 1, 'md')
 end
 if text == 'بوت' then
 if not database:get('bot:rep:mute'..msg.chat_id_) then
-moody = "• تّٰفِٰـضـﮧلْٰ حٌٰبٌِٰـہيَٰ 🌚💫ֆ"
+moody = "•ها خير شكو شبيكم شتردون"
 else
 moody = ''
 end
@@ -4346,7 +4346,7 @@ text = text.."<b>|"..k.."|</b>~⪼(<code>"..v.."</code>)\n"
 	   if database:get('bot:lang:'..msg.chat_id_) then
 text = "<b>ban List is empty !</b>"
   else
-text = "✖┇لايوجد محظورين"
+text = "✖┇ماكو محظورين حبيبي"
 end
 end
 	send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
@@ -4373,7 +4373,7 @@ if #list == 0 then
 	   if database:get('bot:lang:'..msg.chat_id_) then
 text = "<b>Gban List is empty !</b>"
   else
-text = "✖┇لايوجد محظورين عام"
+text = "✖┇ماكو مكتومين عام حمقلبي"
 end
 end
 	send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
@@ -4400,7 +4400,7 @@ if #list == 0 then
 	   if database:get('bot:lang:'..msg.chat_id_) then
 text = "<b>Gban List is empty !</b>"
   else
-text = "✖┇لايوجد مكتومين عام"
+text = "✖┇ماكو مكتومين عام حمقلبي"
 end
 end
 	send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
@@ -8863,7 +8863,7 @@ bot.channel_get_bots(msg.chat_id_,cb)
 if database:get('bot:lang:'..msg.chat_id_) then
 	send(msg.chat_id_, msg.id_, 1, '_> All bots_ *kicked!*', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح جميع البوتات', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '☑┇تم طرد جميع البوتات ب كروب', 1, 'md')
 end
 	end
 	   if txt[2] == 'modlist' and is_owner(msg.sender_user_id_, msg.chat_id_) or txt[2] == 'Modlist' and is_owner(msg.sender_user_id_, msg.chat_id_) or txt[2] == 'الادمنيه' and is_owner(msg.sender_user_id_, msg.chat_id_) then
@@ -8995,7 +8995,7 @@ end
   tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID,offset_ = 0,limit_ = 5000}, check_delete, nil)
   end
 
-local text = msg.content_.text_:gsub('طرد المتروكين','clean deactive')
+local text = msg.content_.text_:gsub('طرد التاركين','clean deactive')
   	if text:match("^[Cc][Ll][Ee][Aa][Nn] [Dd][Ee][Aa][Cc][Tt][Ii][Vv][Ee]$") and is_creator(msg.sender_user_id_, msg.chat_id_) then
 	local txt = {string.match(text, "^([Cc][Ll][Ee][Aa][Nn] [Dd][Ee][Aa][Cc][Tt][Ii][Vv][Ee])$")}
 local function getChatId(chat_id)
@@ -9037,8 +9037,8 @@ if database:get('bot:lang:'..msg.chat_id_) then
  else
    send(msg.chat_id_, msg.id_, 1, '☑┇تم التحديث', 1, 'md')
    end
-os.execute('rm -rf TSHAKE.lua')
-os.execute('wget https://raw.githubusercontent.com/moodlIMyIl/TshAkEapi/master/TSHAKE.lua')
+os.execute('rm -rf WAG.lua')
+os.execute('wget https://github.com/s7don0/WAG')
  return false end
 
  local text = msg.content_.text_:gsub('ادمنيه المجموعه','admin group')
@@ -9075,7 +9075,7 @@ local text = msg.content_.text_:gsub('رفع الادمنيه','setmote admins')
 if database:get('bot:lang:'..msg.chat_id_) then
 moody = '<b>List administrators group setmote BOT</b> : \n\n'
 else
-moody = '📊┇ تم رفع ادمنيه المجموعه في البوت\n'
+moody = '📊┇  رفعت الادمنيه الكروب ب بوت\n'
 end
 local n = 0
 for k,v in pairs(list) do
@@ -10442,7 +10442,7 @@ if text:match("^[Cc][Hh][Aa][Nn][Gg][Ee] [Pp][Hh]$") and tonumber(msg.sender_use
 if database:get('bot:lang:'..msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '_> Now send the_ *developer number*', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '• `الان يمكنك ارسال رقم المطور` 🗳', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '• `دزلي رقم المطور اللي تريده` 🗳', 1, 'md')
 end
 redis:set('nkeko'..msg.sender_user_id_..''..bot_id, 'msg')
   return false end
@@ -10454,7 +10454,7 @@ if keko2 == 'msg' then
 if database:get('bot:lang:'..msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '_> Now send the_ *name of the developer*', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '• `الان يمكنك ارسال الاسم الذي تريده` 🏷', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '• `دزلي الاسم اللي تريده` 🏷', 1, 'md')
 end
 redis:set('nmkeko'..bot_id, text)
 redis:set('nkeko'..msg.sender_user_id_..''..bot_id, 'mmsg')
@@ -10482,7 +10482,7 @@ local text = msg.content_.text_:gsub('اضف مطور','add sudo')
   if database:get('bot:lang:'..msg.chat_id_) then
    send(msg.chat_id_, msg.id_, 1, '_User_ *'..result.sender_user_id_..'* _is Already sudo._', 1, 'md')
   else
-   send(msg.chat_id_, msg.id_, 1, '👤┇العضو ~⪼ *('..result.sender_user_id_..')*\n☑┇بالفعل تم رفعه مطور', 1, 'md')
+   send(msg.chat_id_, msg.id_, 1, '👤┇العضو ~⪼ *('..result.sender_user_id_..')*\n☑┇رفعته مطور لعيونك باش', 1, 'md')
   end
 else
 	redis:set('sudoo'..result.sender_user_id_..''..bot_id, 'yes')
@@ -12635,16 +12635,14 @@ send(msg.chat_id_, msg.id_, 1, (h6 or text), 1, 'html')
 if text:match("^source$") or text:match("^اصدار$") or text:match("^الاصدار$") or text:match("^السورس$") or text:match("^سورس$") then
 
    local text =  [[
-👋┇اهلا بك في سورس تشاكي 🦁ֆ
+👋┇اهلا بك في سورس wag 🦁ֆ
 
-🌐┇<strong>TshAkE TEAM</strong>
+🌐┇<strong>WAG TEAM</strong>
 
-◀┇<a href="https://telegram.me/TshAkETEAM">قناه السورس، 🦁" </a>
-◀┇<a href="https://telegram.me/TshAkE_DEV">قناه شروحات سورس، 🦁" </a>
+◀┇<a href="https://telegram.me/SERVER_IQ">قناه السورس، 🦁" </a>
+◀┇<a href="https://telegram.me/llN00Xll">قناه شروحات سورس، 🦁" </a>
 
-🔎┇<a href="https://github.com/moodlIMyIl/TshAkE">رابط Github Cli (الرقم)،⚜️ </a>
-
-🔎┇<a href="https://github.com/moodlIMyIl/TshAkEapi">رابط Github Api (التوكن)،⚜️ </a>
+🔎┇<a href="https://github.com/s7don0/WAG">رابط Github Api (التوكن)،⚜️ </a>
 
 ]]
 send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
@@ -12653,7 +12651,7 @@ send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 if text:match("^اريد رابط حذف$") or text:match("^رابط حذف$") or text:match("^رابط الحذف$") or text:match("^الرابط حذف$") or text:match("^اريد رابط الحذف$") then
 
    local text =  [[
-🗑┇رابط حذف التلي ، ⬇️
+🗑┇عوف التلي يابه ميفيدك ، ⬇️
 ‼️┇احذف ولا ترجع عيش حياتك'
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 🔎┇<a href="https://telegram.org/deactivate">اضغط هنا للحذف الحساب" </a>
