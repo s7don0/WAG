@@ -54,7 +54,7 @@ yellow ""
 yellow ""
 green "     »»           TshAkE APi successfully installed                 ««      "
 green "     »»            Run this command for launch bot                  ««      "
-red   "     »»                   ./TSHAKE.sh                               ««      "
+red   "     »»                   ./WAG.sh                               ««      "
 }
 function install_TshAkE() {
 sudo apt-get update
